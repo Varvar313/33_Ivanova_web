@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой одностраничный сайт</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4; 
+            color: #000000;
+        }
+        header {
+            background-color: #7aa67d;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px 0;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .quote {
+            font-style: italic;
+            color: #555;
+            margin: 10px 0;
+        }
+        .match-schedule {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Лабораторная работа №1</h1>
+    </header>
+    <main>
+        <!-- Топ 5 смешных фактов -->
+        <section>
+            <h2>Топ 5 смешных фактов из жизни</h2>
+            <ol>
+                <li>Искала кабинет №404 перепутав с кабинетом №440.</li>
+                <li>Перерыла всю комнату в поисках кисточки для кисточки, которая лежала на самом видном месте.</li>
+                <li>Один раз искала телофон с телефоном в руках.</li>
+                <li>Перепутала Эльфевую башню с Пизанской.</li>
+                <li>Проспала свою остановку и долго ждала поезд обратно.</li>
+            </ol>
+        </section>
+
+        <!-- Обзор последнего фильма -->
+        <section>
+            <h2>Обзор последнего просмотренного фильма</h2>
+            <p>Последний фильм, который я смотрел, — <strong>«Начало»</strong>. Это научно-фантастический триллер Кристофера Нолана, который исследует природу снов и реальности. Фильм захватывает с первых минут и держит в напряжении до самого конца. Особенно впечатляют визуальные эффекты и игра Леонардо ДиКаприо.</p>
+            <img src="https://avatars.mds.yandex.net/i?id=7058e4bbbf9daa3966b6a29eea59624a_l-5362869-images-thumbs&n=13" alt="Описание изображения">
+        </section>
+
+        <!-- Цитаты из фильма -->
+        <section>
+            <h2>Цитаты из фильма «Побег из Шоушенка» </h2>
+            <ul>
+                <li class="quote">«Надежда — это хорошая вещь, может быть, лучшая из вещей, и хорошая вещь никогда не умирает.»</li>
+                <li class="quote">«Страх может держать тебя в плену, но надежда может освободить.»</li>
+                <li class="quote">«Некоторые птицы не созданы для клеток. Их перья слишком яркие.»</li>
+            </ul>
+        </section>
+
+        <!-- Расписание матчей -->
+        <section class="match-schedule">
+            <h2>Расписание матчей команды АПЛ (Манчестер Сити)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Дата</th>
+                        <th>Соперник</th>
+                        <th>Время</th>
+                        <th>Счёт</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>10 февраля</td>
+                        <td>Челси</td>
+                        <td>18:30</td>
+                        <td>2:1</td>
+                    </tr>
+                    <tr>
+                        <td>17 февраля</td>
+                        <td>Арсенал</td>
+                        <td>16:00</td>
+                        <td>3:2</td>
+                    </tr>
+                    <tr>
+                        <td>25 февраля</td>
+                        <td>Манчестер Юнайтед</td>
+                        <td>15:00</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>3 марта</td>
+                        <td>Ливерпуль</td>
+                        <td>17:30</td>
+                        <td>--</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>
