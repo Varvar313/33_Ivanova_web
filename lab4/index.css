@@ -1,0 +1,149 @@
+/* Импорт reset.css */
+@import url('reset.css');
+
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+    gap: 20px;
+    padding: 20px;
+}
+
+main {
+    flex: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.reasons, .slogans, .reviews, .price {
+    background-color: #ffcc00;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.reasons {
+    background-color: #ff6666;
+}
+
+.slogans {
+    background-color: #66ccff;
+}
+
+.reviews {
+    background-color: #99ff99;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.price {
+    background-color: #ff99cc;
+}
+
+.reviews .review {
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.price .small-text {
+    font-size: 12px;
+}
+
+.price .highlight {
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.price img.toy-image {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 10px auto;
+}
+
+aside.left-ads, aside.right-ads {
+    width: 200px;
+    background-color: #ffcc00;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+aside.left-ads {
+    background-color: #ff6666;
+}
+
+aside.right-ads {
+    background-color: #66ccff;
+}
+
+.ad {
+    background-color: #ffffff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.ad:hover {
+    transform: scale(1.05);
+}
+
+.ad-image {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    aside.left-ads, aside.right-ads {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .reasons, .slogans, .reviews, .price {
+        padding: 10px;
+    }
+
+    .price img.toy-image {
+        width: 150px;
+    }
+}
