@@ -42,12 +42,15 @@
 
             <section class="reviews">
                 <h2>Отзывы пользователей:</h2>
-                <div class="review">
-                    <p>«Теперь я могу лепить снежки часами!» — Анна</p>
+                <div id="reviews-list">
+                    <!-- Отзывы будут добавляться сюда -->
                 </div>
-                <div class="review">
-                    <p>«Мои дети в восторге!» — Игорь</p>
-                </div>
+                <form id="review-form">
+                    <input type="text" id="review-name" placeholder="Ваше имя" required>
+                    <textarea id="review-text" placeholder="Ваш отзыв" required></textarea>
+                    <input type="file" id="review-image" accept="image/*">
+                    <button type="submit">Добавить отзыв</button>
+                </form>
             </section>
 
             <section class="price">
@@ -65,5 +68,8 @@
             <img src="images/cat3.jpg" alt="Котик 3" class="ad-image">
         </aside>
     </div>
+
+    <script src="cookie.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
