@@ -1,7 +1,5 @@
-/* Импорт reset.css */
 @import url('reset.css');
 
-/* Общие стили */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
