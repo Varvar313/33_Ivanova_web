@@ -1,4 +1,3 @@
-// Функция для сохранения данных в cookie
 function setCookie(name, value, days) {
     let expires = "";
     if (days) {
@@ -9,7 +8,6 @@ function setCookie(name, value, days) {
     document.cookie = name + "=" + (value || "") + expires + "; path=/";
 }
 
-// Функция для получения данных из cookie
 function getCookie(name) {
     const nameEQ = name + "=";
     const ca = document.cookie.split(';');
@@ -21,7 +19,6 @@ function getCookie(name) {
     return null;
 }
 
-// Функция для удаления cookie
 function eraseCookie(name) {
     document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }

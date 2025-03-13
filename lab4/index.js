@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const reviewsList = document.getElementById('reviews-list');
     const reviewForm = document.getElementById('review-form');
 
-    // Загрузка отзывов из cookies
     function loadReviews() {
         const reviews = JSON.parse(getCookie('reviews') || '[]');
         reviewsList.innerHTML = '';
@@ -18,14 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Сохранение отзывов в cookies
     function saveReview(name, text, image) {
         const reviews = JSON.parse(getCookie('reviews') || '[]');
         reviews.push({ name, text, image });
         setCookie('reviews', JSON.stringify(reviews), 7); // Сохраняем на 7 дней
     }
 
-    // Обработка отправки формы
     reviewForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const name = document.getElementById('review-name').value;
@@ -42,6 +39,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Загружаем отзывы при загрузке страницы
     loadReviews();
 });
