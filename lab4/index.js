@@ -1,4 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Функция для переключения темы
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-theme');
+        // Сохраняем выбранную тему в cookie
+        const isDarkTheme = body.classList.contains('dark-theme');
+        setCookie('theme', isDarkTheme ? 'dark' : 'light', 7); // Сохраняем на 7 дней
+    });
+
+    // При загрузке страницы проверяем сохранённую тему
+    const savedTheme = getCookie('theme');
+    if (savedTheme === 'dark') {
+        body.classList.add('dark-theme');
+    }
+
+    // Остальной код для отзывов
     const reviewsList = document.getElementById('reviews-list');
     const reviewForm = document.getElementById('review-form');
 

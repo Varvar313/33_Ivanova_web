@@ -5,11 +5,19 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #f0f0f0; 
+    background-color: #f0f0f0; /* Светлый фон по умолчанию */
+    color: #000000; /* Светлый текст по умолчанию */
+    transition: background-color 0.3s, color 0.3s; /* Плавное переключение */
+}
+
+/* Тёмная тема */
+body.dark-theme {
+    background-color: #121212; /* Тёмный фон */
+    color: #ffffff; /* Белый текст */
 }
 
 header {
-    background-color: #4CAF50; 
+    background-color: #4CAF50;
     color: white;
     text-align: center;
     padding: 1em;
@@ -25,48 +33,66 @@ h1 {
     flex: 1;
     gap: 20px;
     padding: 20px;
-    background-color: #ffffff; 
+    background-color: #ffffff;
+}
+
+.dark-theme .container {
+    background-color: #1e1e1e; /* Тёмный фон для контейнера */
 }
 
 main {
     flex: 1;
     max-width: 800px;
     margin: 0 auto;
-    background-color: #ffffff; 
+    background-color: #ffffff;
+}
+
+.dark-theme main {
+    background-color: #1e1e1e; /* Тёмный фон для основного контента */
 }
 
 .reasons, .slogans, .reviews, .price {
-    background-color: #ffcc00; 
+    background-color: #ffcc00;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
 }
 
+.dark-theme .reasons, .dark-theme .slogans, .dark-theme .reviews, .dark-theme .price {
+    background-color: #333333; /* Тёмный фон для секций */
+    color: #ffffff; /* Белый текст */
+}
+
 .reasons {
-    background-color: #ff6666; 
+    background-color: #ff6666;
 }
 
 .slogans {
-    background-color: #66ccff; 
+    background-color: #66ccff;
 }
 
 .reviews {
-    background-color: #99ff99; 
+    background-color: #99ff99;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 10px;
 }
 
 .price {
-    background-color: #ff99cc; 
+    background-color: #ff99cc;
 }
 
 .reviews .review {
-    background-color: #ffffff; 
+    background-color: #ffffff;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme .reviews .review {
+    background-color: #444444; /* Тёмный фон для отзывов */
+    color: #ffffff; /* Белый текст */
 }
 
 .price .small-text {
@@ -75,7 +101,7 @@ main {
 
 .price .highlight {
     font-weight: bold;
-    color: #ff0000; 
+    color: #ff0000;
 }
 
 .price img.toy-image {
@@ -88,27 +114,36 @@ main {
 
 aside.left-ads, aside.right-ads {
     width: 200px;
-    background-color: #ffcc00; 
+    background-color: #ffcc00;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.dark-theme aside.left-ads, .dark-theme aside.right-ads {
+    background-color: #333333; /* Тёмный фон для боковых блоков */
+}
+
 aside.left-ads {
-    background-color: #ff6666; 
+    background-color: #ff6666;
 }
 
 aside.right-ads {
-    background-color: #66ccff; 
+    background-color: #66ccff;
 }
 
 .ad {
-    background-color: #ffffff; 
+    background-color: #ffffff;
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
     text-align: center;
     transition: transform 0.3s ease;
+}
+
+.dark-theme .ad {
+    background-color: #444444; /* Тёмный фон для рекламных блоков */
+    color: #ffffff; /* Белый текст */
 }
 
 .ad:hover {
