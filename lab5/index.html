@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме</title>
+    <style>
+        /* Основные стили */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #4a90e2;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #555;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 5px;
+            font-size: 1.8em;
+            margin-top: 20px;
+        }
+
+        .contact-info {
+            font-style: italic;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+        }
+
+        ul {
+            list-style-type: square;
+            margin-left: 20px;
+            padding-left: 10px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .block {
+            margin-bottom: 30px;
+        }
+
+        /* Иконки для контактной информации */
+        .contact-info p::before {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        .contact-info p.email::before {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%234a90e2"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>');
+        }
+
+        .contact-info p.phone::before {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%234a90e2"><path d="M20 15.5c-1.2 0-2.5-.2-3.6-.6-.4-.1-.8 0-1.1.3l-2.2 2.2c-2.8-1.5-5-3.8-6.5-6.5l2.2-2.2c.4-.4.5-1 .3-1.1-.4-1.1-.6-2.4-.6-3.6 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z"/></svg>');
+        }
+
+        /* Анимации */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .block {
+            animation: fadeIn 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <script>
+            class Block {
+                constructor(content) {
+                    this.content = content;
+                }
+
+                toHTML() {
+                    return `<div class="block">${this.content}</div>`;
+                }
+            }
+
+            class HeaderBlock extends Block {
+                constructor(name, position) {
+                    super('');
+                    this.name = name;
+                    this.position = position;
+                }
+
+                toHTML() {
+                    return `
+                        <h1>${this.name}</h1>
+                        <h2>${this.position}</h2>
+                    `;
+                }
+            }
+
+            class ContactInfoBlock extends Block {
+                constructor(email, phone) {
+                    super('');
+                    this.email = email;
+                    this.phone = phone;
+                }
+
+                toHTML() {
+                    return `
+                        <div class="contact-info">
+                            <p class="email">Email: ${this.email}</p>
+                            <p class="phone">Телефон: ${this.phone}</p>
+                        </div>
+                    `;
+                }
+            }
+
+            class TextBlock extends Block {
+                constructor(title, content) {
+                    super('');
+                    this.title = title;
+                    this.content = content;
+                }
+
+                toHTML() {
+                    return `
+                        <h2>${this.title}</h2>
+                        <p>${this.content}</p>
+                    `;
+                }
+            }
+
+            class ListBlock extends Block {
+                constructor(title, items) {
+                    super('');
+                    this.title = title;
+                    this.items = items;
+                }
+
+                toHTML() {
+                    const listItems = this.items.map(item => `<li>${item}</li>`).join('');
+                    return `
+                        <h2>${this.title}</h2>
+                        <ul>${listItems}</ul>
+                    `;
+                }
+            }
+
+            function buildPage(blocks) {
+                const container = document.querySelector('.container');
+                container.innerHTML = ''; // Очищаем содержимое контейнера
+
+                blocks.forEach(block => {
+                    container.innerHTML += block.toHTML();
+                });
+            }
+
+            // Создаем объекты блоков для резюме
+            const header = new HeaderBlock("Иванова Варвара", "Студентка");
+            const contactInfo = new ContactInfoBlock("barbaraivanova2345@gmail.com", "+7 (977) 370-41-50");
+            const aboutMe = new TextBlock("О себе", "Есть опыт работы с детьми. Стаж работы 5 лет аниматором детских праздников.");
+            const skills = new ListBlock("Навыки", [
+                "Взаимодействие с детьми",
+                "Работа с ДЦП",
+                "Быстрое реагирование на нестандартные ситуации"
+            ]);
+            const experience = new ListBlock("Опыт работы", [
+                "Аниматор (2021–2025)"
+            ]);
+
+            // Собираем страницу
+            buildPage([header, contactInfo, aboutMe, skills, experience]);
+        </script>
+    </div>
+</body>
+</html>
