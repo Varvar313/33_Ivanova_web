@@ -2,26 +2,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
 
-    // Функция для переключения темы
     themeToggle.addEventListener('click', () => {
         body.classList.toggle('dark-theme');
-        // Сохраняем выбранную тему в cookie
         const isDarkTheme = body.classList.contains('dark-theme');
-        setCookie('theme', isDarkTheme ? 'dark' : 'light', 7); // Сохраняем на 7 дней
+        setCookie('theme', isDarkTheme ? 'dark' : 'light', 7); 
     });
 
-    // При загрузке страницы проверяем сохранённую тему
     const savedTheme = getCookie('theme');
     if (savedTheme === 'dark') {
         body.classList.add('dark-theme');
     }
 
-    // Остальной код для отзывов
     const reviewsList = document.getElementById('reviews-list');
     const reviewForm = document.getElementById('review-form');
 
     function loadReviews() {
-        const reviews = JSON.parse(getCookie('reviews') || '[]');
+        const reviewsCookie = getCookie('reviews');
+        let reviews = [];
+
+        try {
+            reviews = JSON.parse(reviewsCookie || '[]');
+        } catch (error) {
+            console.error('Ошибка при разборе отзывов из cookie:', error);
+            setCookie('reviews', JSON.stringify([]), 7);
+        }
+
         reviewsList.innerHTML = '';
         reviews.forEach(review => {
             const reviewItem = document.createElement('div');
@@ -36,9 +41,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function saveReview(name, text, image) {
-        const reviews = JSON.parse(getCookie('reviews') || '[]');
+        const reviewsCookie = getCookie('reviews');
+        let reviews = [];
+
+        try {
+            reviews = JSON.parse(reviewsCookie || '[]');
+        } catch (error) {
+            console.error('Ошибка при разборе отзывов из cookie:', error);
+            reviews = [];
+        }
+
         reviews.push({ name, text, image });
-        setCookie('reviews', JSON.stringify(reviews), 7); // Сохраняем на 7 дней
+
+        setCookie('reviews', JSON.stringify(reviews), 7);
     }
 
     reviewForm.addEventListener('submit', (e) => {

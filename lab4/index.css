@@ -5,15 +5,14 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #f0f0f0; /* Светлый фон по умолчанию */
-    color: #000000; /* Светлый текст по умолчанию */
-    transition: background-color 0.3s, color 0.3s; /* Плавное переключение */
+    background-color: #f0f0f0; 
+    color: #000000; 
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* Тёмная тема */
 body.dark-theme {
-    background-color: #121212; /* Тёмный фон */
-    color: #ffffff; /* Белый текст */
+    background-color: #121212; 
+    color: #ffffff; 
 }
 
 header {
@@ -37,7 +36,7 @@ h1 {
 }
 
 .dark-theme .container {
-    background-color: #1e1e1e; /* Тёмный фон для контейнера */
+    background-color: #1e1e1e; 
 }
 
 main {
@@ -48,7 +47,7 @@ main {
 }
 
 .dark-theme main {
-    background-color: #1e1e1e; /* Тёмный фон для основного контента */
+    background-color: #1e1e1e; 
 }
 
 .reasons, .slogans, .reviews, .price {
@@ -60,8 +59,8 @@ main {
 }
 
 .dark-theme .reasons, .dark-theme .slogans, .dark-theme .reviews, .dark-theme .price {
-    background-color: #333333; /* Тёмный фон для секций */
-    color: #ffffff; /* Белый текст */
+    background-color: #333333; 
+    color: #ffffff; 
 }
 
 .reasons {
@@ -91,8 +90,8 @@ main {
 }
 
 .dark-theme .reviews .review {
-    background-color: #444444; /* Тёмный фон для отзывов */
-    color: #ffffff; /* Белый текст */
+    background-color: #444444; 
+    color: #ffffff; 
 }
 
 .price .small-text {
@@ -121,7 +120,7 @@ aside.left-ads, aside.right-ads {
 }
 
 .dark-theme aside.left-ads, .dark-theme aside.right-ads {
-    background-color: #333333; /* Тёмный фон для боковых блоков */
+    background-color: #333333; 
 }
 
 aside.left-ads {
@@ -142,8 +141,8 @@ aside.right-ads {
 }
 
 .dark-theme .ad {
-    background-color: #444444; /* Тёмный фон для рекламных блоков */
-    color: #ffffff; /* Белый текст */
+    background-color: #444444; 
+    color: #ffffff; 
 }
 
 .ad:hover {
@@ -156,7 +155,6 @@ aside.right-ads {
     margin-bottom: 10px;
 }
 
-/* Медиа-запросы для адаптивности */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
