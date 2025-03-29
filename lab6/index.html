@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аниматор Варвара Иванова</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/calendar.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#" class="nav-link active" data-section="resume">Резюме</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" data-section="price">Прайс-лист</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" data-section="schedule">Расписание</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" data-section="cats">Наши кошки</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <div id="resume-section" class="content-section active-section"></div>
+            <div id="price-content" class="content-section api-content"></div>
+            <div id="schedule-content" class="content-section api-content"></div>
+            <div id="cats-content" class="content-section api-content"></div>
+        </main>
+    </div>
+
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>
